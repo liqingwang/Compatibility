@@ -1,1 +1,5 @@
-删除myeclipse 安装路径下 configuration/org.eclipse.core.runtime/.keyring 即可
+
+如果用的JavaHL, 找到以下目录并删除目录下的文件.
+   C:\"Documents and Settings"\[YourUserName]\"Application Data"\Subversion"\auth
+如果用的SVNKit, 找到以下目录并删除.keyring文件.
+   [eclipse_home]\"configuration"\org.eclipse.core.runtime
