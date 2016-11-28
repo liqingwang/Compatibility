@@ -1,1 +1,35 @@
-value="请输入用户名" onfocus="if(value=='请输入用户名')value=''" onblur="if(!value)value='请输入用户名'"
+<input type="text"  id="username" name="username"  value="请输入用户名" onfocus="if(value=='请输入用户名')value=''" onblur="if(!value)value='请输入用户名'">
+
+
+
+passwordp
+
+
+
+<!-- Style = display none for people who dont have javascript -->
+<input type="text" name="fake_pass" id="fake_pass" value="Enter Password:" style="display:none"/>
+<input type="password" name="real_pass" id="real_pass"/>
+
+
+
+// On DOM ready, hide the real password
+$('#real_pass').hide();
+
+// Show the fake pass (because JS is enabled)
+$('#fake_pass').show();
+
+// On focus of the fake password field
+$('#fake_pass').focus(function(){
+    $(this).hide(); //  hide the fake password input text
+    $('#real_pass').show().focus(); // and show the real password input password
+});
+
+// On blur of the real pass
+$('#real_pass').blur(function(){
+    if($(this).val() == ""){ // if the value is empty, 
+        $(this).hide(); // hide the real password field
+        $('#fake_pass').show(); // show the fake password
+    }
+    // otherwise, a password has been entered,
+    // so do nothing (leave the real password showing)
+});
